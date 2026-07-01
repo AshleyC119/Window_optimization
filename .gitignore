@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Large model & data files (upload to Kaggle separately)
+surrogate_model.pt
+em_window_dataset/
+
+# Kaggle
+.kaggle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kaggle
+.kaggle/
+
+# OS
+.DS_Store
+Thumbs.db
