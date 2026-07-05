@@ -34,7 +34,7 @@ Window_optimization/
 ├── 📁 surrogate_lgbm/                   代理模型管线
 │   ├── train_lgbm_surrogate.ipynb       BO-LGBM 训练
 │   │   └── lgbm_surrogate.txt + lgbm_evaluation.png
-│   ├── nsga_surrogate_comparison.ipynb  纯 NSGA2 vs 代理辅助 ⭐
+│   ├── full_comparison.ipynb  纯 NSGA2 vs 代理辅助 ⭐
 │   │   └── angle1-4.png (4 角度对比)
 │   ├── age_moea_surrogate.ipynb         两阶段 warm-start (AGE 版)
 │   ├── final_validation.ipynb           最终验证 (4D 切片 + HV/IGD)

@@ -172,5 +172,5 @@ AGE-MOEA warm-start (1.658 m²) 优于 NSGA-II warm-start (1.692 m²)——AGE-M
 | 目录 | 核心文件 |
 |---|---|
 | `python_optimization/` | `pareto_front.ipynb`, `algorithm_comparison.ipynb`, `pareto_jump_diagnostic.ipynb` |
-| `surrogate_lgbm/` | `train_lgbm_surrogate.ipynb`, `nsga_surrogate_comparison.ipynb`, `final_validation.ipynb` |
+| `surrogate_lgbm/` | `train_lgbm_surrogate.ipynb`, `full_comparison.ipynb`, `final_validation.ipynb` |
 | `legacy/` | Trust-Region, RBF, Stacking 实验归档 |
