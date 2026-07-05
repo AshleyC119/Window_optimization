@@ -23,9 +23,9 @@ MOEA/D 的 pymoo 实现不支持不等式约束，因此为其单独设计 `EMWi
 ### 结果
 
 ```
-NSGA-II:  1.6456 m² @ 9.97%  (300 pts, 112s)
-AGE-MOEA: 1.6973 m² @ 9.96%  (300 pts, 145s)
-MOEA/D:   1.6557 m² @ 9.92%  (167 pts, 273s)
+NSGA-II:  1.6456 m² @ 9.97%  (300 pts, 227s)
+AGE-MOEA: 1.6973 m² @ 9.96%  (300 pts)
+MOEA/D:   1.6557 m² @ 9.92%  (167 pts)
 
 max Δarea = 0.05 m² (3%), max Δoutage = 0.05pp
 ```
