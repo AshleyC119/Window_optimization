@@ -156,7 +156,7 @@ Iter 3: radius ±1.25% → 候选 outage 10.08% > 10% → 半径砍半
 | Hypervolume Deviation | 5.49% | < 10% 为发表级 |
 | IGD (Inverted Generational Distance) | 0.0266 | < 0.05 为优秀 |
 
-HV 偏差 < 5%，IGD < 0.05——代理前沿在 Pareto 拓扑上等价于真实物理前沿。
+HV 偏差 5.49%（< 10% 发表级阈值），IGD 0.0266（< 0.05 优秀级）——代理前沿在 Pareto 拓扑上等价于真实物理前沿。
 
 ## 7. NSGA-II vs 代理辅助全维度对比
 
