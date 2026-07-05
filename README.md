@@ -5,8 +5,8 @@
 ## 核心结果
 
 ```
-物理 NSGA-II (ground truth):  1.64 m² @ 9.97%  (60,000 evals)
-双阶段 BO-LGBM + Warm-Start:  1.66 m² @ 9.92%  (6,000 evals, gap 1%)
+物理 NSGA-II (ground truth):  1.646 m² @ 9.97%  (60,000 evals)
+双阶段 BO-LGBM + Warm-Start:  1.655 m² @ 9.92%  (6,000 evals, gap 1%)
 三算法互证 (NSGA2/AGE/MOEA):  max Δ < 3%
 ```
 

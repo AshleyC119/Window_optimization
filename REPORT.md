@@ -83,7 +83,7 @@ max Δarea = 0.05 m² (3%), max Δoutage = 0.05pp
 ### 最终结果
 
 ```
-物理 NSGA-II (ground truth):  1.64 m² @ 9.97%
+物理 NSGA-II (ground truth):  1.646 m² @ 9.97%
 双阶段 warm-start:            1.655 m² @ 9.92%
 Gap: 1%
 ```
