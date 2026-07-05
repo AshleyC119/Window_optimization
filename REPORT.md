@@ -84,7 +84,7 @@ max Δarea = 0.05 m² (3%), max Δoutage = 0.05pp
 
 ```
 物理 NSGA-II (ground truth):  1.64 m² @ 9.97%
-双阶段 warm-start:            1.66 m² @ 9.92%
+双阶段 warm-start:            1.655 m² @ 9.92%
 Gap: 1%
 ```
 
@@ -176,5 +176,5 @@ HV 偏差 < 5%，IGD < 0.05——代理前沿在 Pareto 拓扑上等价于真实
 | 方法 | 面积 (m²) | 物理评估次数 | 说明 |
 |---|---|---|---|
 | 纯物理 NSGA-II | 1.64 | 60,000 | ground truth |
-| 双阶段 LGBM→Warm-Start | **1.66** | **6,000** | gap 1%, 90% 评估节省 |
+| 双阶段 LGBM→Warm-Start | **1.66** | **6,000** | gap 0.5%, 90% 评估节省 |
 | RBF 局部精炼 | 1.66 | 30~500 额外 | 无改进, 证实 warm-start 已达极限 |
