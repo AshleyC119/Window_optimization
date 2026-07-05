@@ -137,8 +137,8 @@ AGE-MOEA warm-start (1.658 m²) 优于 NSGA-II warm-start (1.692 m²)——AGE-M
 
 | 指标 | 值 | 阈值 |
 |---|---|---|
-| Hypervolume Deviation | 5.49% | < 10% 发表级 |
-| IGD | 0.0266 | < 0.05 优秀级 |
+| Hypervolume Deviation | 1.19% | < 10% 发表级 |
+| IGD | 0.0120 | < 0.05 优秀级 |
 
 ---
 
