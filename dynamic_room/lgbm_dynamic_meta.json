@@ -1,0 +1,18 @@
+{
+  "n_features": 17,
+  "r2_all": 0.994383138845329,
+  "mae_feas": 0.003559312798086342,
+  "best_params": {
+    "learning_rate": 0.030464057087620414,
+    "max_depth": 15,
+    "num_leaves": 205,
+    "min_data_in_leaf": 25,
+    "feature_fraction": 0.7030801109033632,
+    "bagging_fraction": 0.6763533111105651,
+    "objective": "regression",
+    "metric": "mae",
+    "verbosity": -1,
+    "device": "gpu",
+    "linear_tree": true
+  }
+}
