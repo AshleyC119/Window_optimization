@@ -180,13 +180,13 @@ AGE-MOEA warm-start (1.658 m²) 优于 NSGA-II warm-start (1.692 m²)——AGE-M
 ## 9. 动态房间代理模型 (dynamic_room/)
 
 ### 数据生成
-200 个房间尺寸 (LHS, 2-20m)，每间 ~150 个窗口 → 30,000 样本。多进程并行 KDE 构建，验证版引擎确保标签正确。
+200 个房间尺寸 (LHS, 2-20m)，每间 ~150 个窗口 → 30,000 样本。多进程并行 KDE 构建 (4 CPU workers, ~50 min)，GPU 采样 30k 窗口 (~2.5 min)。总生成时间 ~53 min。
 
 ### 特征工程 (21 特征)
 基础 6 维 → +相对比例 (xc/rx, Lx/rx, Area_ratio) → +BS 物理 (距离, 方向余弦) → +壁面余量 (4 margins) → +横纵比 → +sinc 相位 (phase_x, phase_z) → +波长归一化 (Lx/λ, Lz/λ)
 
 ### 训练
-LightGBM, linear_tree=True, extra_trees=True, Optuna 40 轮 5-Fold CV, Pareto 前沿 + 边界过采样 (8-12%)。
+LightGBM, linear_tree=True, extra_trees=True, Optuna 40 轮 5-Fold CV (~5 min GPU), Pareto 前沿 + 边界过采样 (8-12%)。
 - R² all: 0.9940, Feasible MAE: 0.25%
 
 ### HV/IGD 验证 (3 房间)
