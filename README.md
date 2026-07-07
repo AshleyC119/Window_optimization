@@ -4,55 +4,54 @@
 
 ## 核心结果
 
-```
-物理 NSGA-II:  1.646 m² @ 9.97%  (227s, 60k evals)
-代理辅助:      1.655 m² @ 9.92%  (89s,  6k evals, gap 0.5%)
-```
+**固定房间 (10×10m)**：Pure NSGA-II 1.682 m² @ 9.93% (134s)；Dual AGE-MOEA 1.658 m² (84s)。
+
+**动态房间 (2–20m)**：21 特征 LGBM (Feasible MAE 0.25%) + Wildcard Pipeline (gap < 2%)。
+
+## 报告
+
+| 文件 | 内容 |
+|---|---|
+| `REPORT_PART1_FIXED_ROOM.md` | 固定 10×10m 完整汇报 |
+| `REPORT_PART2_DYNAMIC_ROOM.md` | 动态 2–20m 完整汇报 |
+| `REPORT.md` | 报告索引 |
 
 ## 目录
 
 ```
 Window_optimization/
-├── 📄 search_channel.m                    MATLAB 原版
-├── 📄 README.md / REPORT.md              入口 + 详细汇报
-├── 📄 STAGE_SUMMARY.md / Reference.md     阶段总结 + 文献
+├── 📄 README.md / REPORT*.md
 │
-├── 📁 python_optimization/              物理模型 + 多目标优化
+├── 📁 python_optimization/              固定房间物理优化
 │   ├── pareto_front.ipynb               NSGA-II Pareto 前沿 ⭐
-│   │   └── pareto_front.png
 │   ├── algorithm_comparison.ipynb       三算法互证 (NSGA2/AGE/MOEA)
-│   │   └── algo_comparison.png + viz_*.png
 │   ├── pareto_jump_diagnostic.ipynb     Knee Jump + Jump B 归因
-│   │   └── jump_tracking.png + jump_wall_canvas.png
+│   ├── pareto_comparison.ipynb          自阻塞消融对比
 │   ├── ergodicity_validation.ipynb      KDE vs Markov 收敛验证
-│   │   └── fig_exp1/2_convergence.png
-│   ├── cross_validate_matlab.ipynb      MATLAB 交叉验证
-│   ├── grid_search.ipynb                单目标 GA+Adam
-│   ├── searcher_v2.ipynb               MC 轨迹 GA+Adam
-│   └── METHODOLOGY.md                   方法论详解
+│   └── METHODOLOGY.md
 │
-├── 📁 surrogate_lgbm/                   代理模型管线
-│   ├── train_lgbm_surrogate.ipynb       BO-LGBM 训练
-│   │   └── lgbm_surrogate.txt + lgbm_evaluation.png
-│   ├── full_comparison.ipynb  纯 NSGA2 vs 代理辅助 ⭐
-│   │   └── angle1-4.png (4 角度对比)
-│   ├── age_moea_surrogate.ipynb         两阶段 warm-start (AGE 版)
-│   ├── final_validation.ipynb           最终验证 (4D 切片 + HV/IGD)
-│   │   └── validation_sweeps.png + pareto_metrics.png
-│   ├── trust_region.ipynb               置信域实验 (负结果)
-│   └── rbf_local_polish.ipynb           RBF 局部精炼 (负结果)
+├── 📁 surrogate_lgbm/                   固定房间代理模型
+│   ├── train_lgbm_surrogate.ipynb       BO-LGBM 训练 (4D)
+│   ├── full_comparison.ipynb            四臂 + 四角度对比 ⭐
+│   └── final_validation.ipynb           交叉切片 + HV/IGD 验证
+│
+├── 📁 dynamic_optimization/             动态房间物理优化
+│   ├── pareto_front.ipynb               NSGA-II (参数化房间)
+│   ├── multi_room_batch.ipynb           7 房间批量 (pop=300) ⭐
+│   └── engine_compare.ipynb             4D vs 动态引擎对比（诊断用）
+│
+├── 📁 dynamic_room/                     动态房间代理模型
+│   ├── generate_training_data.ipynb     30k 样本生成 (多进程 KDE)
+│   ├── train_lgbm.ipynb                 21 特征 LGBM 训练
+│   ├── pipeline_v1p5.ipynb              最终 Wildcard Pipeline ⭐
+│   ├── pipeline.ipynb                   原版 Pipeline
+│   ├── pipeline_tune.ipynb              网格搜索调优 (P1×P2)
+│   ├── pipeline_compare.ipynb           原版 vs v1.5 全房间对比
+│   ├── pipeline_vs_pure.ipynb           三线 Pareto 叠加图
+│   └── validate_model.ipynb             三路 HV/IGD 验证
 │
 └── 📁 legacy/                           归档
-    ├── export_data.m / human_meta_trajectory.csv
-    └── stacking/                        Ridge+LGBM 实验 (负结果)
+    ├── stacking/                        Ridge+LGBM (负结果)
+    ├── dynamic_room_v2/                 v2 实验 (逆对数采样)
+    └── search_channel.m                 MATLAB 原版
 ```
-
-## 文档
-
-| 文件 | 内容 |
-|---|---|
-| `REPORT_PART1_FIXED_ROOM.md` | 固定房间 (10×10m) 完整汇报 |
-| `REPORT_PART2_DYNAMIC_ROOM.md` | 动态房间 (2-20m) 完整汇报 |
-| `STAGE_SUMMARY.md` | 全项目阶段总结 |
-| `python_optimization/METHODOLOGY.md` | 方法论详解 |
-| `Reference.md` | 五篇论文数学模型 |
