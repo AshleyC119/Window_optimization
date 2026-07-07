@@ -86,7 +86,11 @@ Area=1.682 m², Outage=9.93%
 | Dual-Stage NSGA2 | LGBM + Physics NSGA2 20g | 45s | 1.6915 m² |
 | **Dual AGE-MOEA** | LGBM + Physics AGE-MOEA 20g | 84s | **1.6578 m²** |
 
-四角度分析：基因多样性坍塌、虚假最优退潮、约束违规率、Pareto 四线对比。
+四角度分析（配图 `full_comparison.ipynb` 产出）：
+- **Angle 1 (基因多样性坍塌)**：代理 warm-start 种群从 gen 0 即收敛，纯物理需 80 代
+- **Angle 2 (虚假最优退潮)**：代理初始解大面积越界，物理引擎接管后 5→15 代滑回 10% 红线
+- **Angle 3 (约束违规率)**：纯物理早期 ~65% 违规，代理 warm-start 从 gen 0 起 ≈0%
+- **Angle 4 (Pareto 四线对比)**：灰(物理)、红(纯代理)、绿(Dual NSGA2)、橙(Dual AGE) 同台
 
 AGE-MOEA warm-start (1.658 m²) 优于 NSGA-II warm-start (1.692 m²)，距 ground truth (1.682 m²) 差 1.4%。
 

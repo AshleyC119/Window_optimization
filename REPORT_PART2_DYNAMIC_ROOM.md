@@ -109,11 +109,18 @@ Wildcard 固定 100，扫 P1 ∈ {100,140,200} × P2 ∈ {20,30} 在三房间上
 
 | 组件 | 关键指标 |
 |---|---|
-| 物理引擎 | 100% 镜像验证版, 自适应网格 |
-| LGBM 模型 | 21 特征, Feasible MAE 0.25%, R² 0.994 |
-| 最终 Pipeline | P1=140g NSGA-II, 100 wildcard, P2=20g AGE-MOEA |
-| 小房间精度 | 8×6 gap 0.6% (原版 7.2%) |
-| 大房间精度 | 12×10 gap 0.4%, 15×12 gap 0.0% |
+| 物理引擎 | 100% 镜像 4D 验证版, 自适应网格 (~0.05m 间距) |
+| LGBM 模型 | 21 特征, R²=0.994, Feasible MAE=0.25% |
+| 最终 Pipeline | P1=140g NSGA-II + 100 wildcard + P2=20g AGE-MOEA |
+| 8×6 小房间 | Gap 0.6% (原版 7.2%), 墙钟 38s vs GT 120s |
+| 12–20m 大房间 | Gap < 2%, 墙钟 43–75s vs GT 134–291s |
+| 5×5m 极小型 | 偏差 >20%, 训练数据覆盖不足（未来改进方向） |
+
+**关键配图**：
+- `multi_room_pareto.png` — 7 房间 GSGS Pareto 同台
+- `pipeline_comparison.png` — 原版 vs v1.5 gap 柱状图
+- `pipeline_vs_pure_pareto.png` — 三线叠加 (Pure NSGA-II / 原版 / v1.5)
+- `val_3way_*.png` — 代理模型 HV/IGD 验证图
 
 ## 文件索引
 
