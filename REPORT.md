@@ -194,6 +194,16 @@ LightGBM, linear_tree=True, extra_trees=True, Optuna 40 轮 5-Fold CV (~5 min GP
 | Room | HV Dev | IGD |
 |---|---|---|
 | 8×6m | 3.0% (NSGA2) / 2.9% (AGE) | 0.0297 / 0.0288 | 138s pure → 23s/52s surr |
+
+### Pipeline 对比 (8×6m, ground truth 1.089 m²)
+
+| 版本 | Knee | 时间 | 说明 |
+|---|---|---|---|
+| Pure NSGA-II | 1.089 m² | 138s | ground truth |
+| 原版 pipeline | 1.167 m² | 52s | 50 随机种子, 20g 精炼 |
+| **v1.5 (wildcard)** | **1.093 m²** | 72s | 100 强制小窗种子, 30g 精炼 |
+
+Wildcard 将 gap 从 7.2% 压缩至 0.3%。代价: 增加 20s 墙钟 (52→72s)。
 | 12×10m | 0.7% (NSGA2) / 0.8% (AGE) | 0.0100 / 0.0084 | 180s pure → 23s/50s surr |
 | 15×12m | 0.5% (NSGA2) / 0.5% (AGE) | 0.0072 / 0.0088 | 201s pure → 24s/52s surr |
 
