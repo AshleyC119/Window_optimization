@@ -51,7 +51,8 @@ Window_optimization/
 
 | 文件 | 内容 |
 |---|---|
-| `REPORT.md` | 面向导师的详细汇报 (从 AGE-MOEA 讲起) |
+| `REPORT_PART1_FIXED_ROOM.md` | 固定房间 (10×10m) 完整汇报 |
+| `REPORT_PART2_DYNAMIC_ROOM.md` | 动态房间 (2-20m) 完整汇报 |
 | `STAGE_SUMMARY.md` | 全项目阶段总结 |
 | `python_optimization/METHODOLOGY.md` | 方法论详解 |
 | `Reference.md` | 五篇论文数学模型 |
