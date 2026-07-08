@@ -11,12 +11,11 @@ em_window_dataset/
 # Kaggle
 .kaggle/
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Kaggle
-.kaggle/
+# Presentation (local only, not for repo)
+*.pptx
+make_pptx.py
+slides.html
+slides_ref_2.md
 
 # OS
 .DS_Store
